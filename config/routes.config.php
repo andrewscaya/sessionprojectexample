@@ -26,4 +26,14 @@ $baseConfig['routes'] = [
         '/admin[/{action}]',
         'specialmodule/index',
     ],
+    5 => [
+        ['GET', 'POST'],
+        '/login',
+        'login',
+    ],
+    6 => [
+        'GET',
+        '/logout',
+        'logout',
+    ],
 ];

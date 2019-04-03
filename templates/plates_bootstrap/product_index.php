@@ -40,10 +40,14 @@
                             <td><?php echo $product['description'] ?></td>
                             <td><?php echo $product['image'] ?></td>
                             <td>
+                                <?php if ($view['authenticated'] === true): ?>
                                 <a href="<?php echo $view['urlbaseaddr'] ?>products/edit/<?php echo $product['id'] ?>">Modify</a>
+                                <?php endif ?>
                             </td>
                             <td>
+                                <?php if ($view['authenticated'] === true): ?>
                                 <a href="<?php echo $view['urlbaseaddr'] ?>products/delete/<?php echo $product['id'] ?>">Delete</a>
+                                <?php endif ?>
                             </td>
                         </tr>
                       <?php endforeach; ?>
@@ -51,7 +55,7 @@
                 </tbody>
               </table>
             </div>
-            <p><a href="<?php echo $view['urlbaseaddr'] ?>products/add" class="mt-6 inline-block bg-white text-black no-underline px-4 py-3 shadow-lg">Add new product</a></p>
+            <p><?php if ($view['authenticated'] === true): ?><a href="<?php echo $view['urlbaseaddr'] ?>products/add" class="mt-6 inline-block bg-white text-black no-underline px-4 py-3 shadow-lg">Add new product</a><?php endif ?></p>
         </div> <!-- END pageBody -->
       </div>
     </div>
